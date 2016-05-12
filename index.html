@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8" />
+
+<title>jQuery Drawer Plugin Demo</title>
+
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" type="text/css" media="all" href="css/jquery.drawer.css" />
+<style>
+#main-div {
+  height: 100%;
+  width: 100%;
+  border: solid 1px red;
+}
+
+#right-drawer {
+  height: 100px;
+  width: 200px;
+  border: solid 1px green;
+  background-color: green;
+}
+
+#right-drawer2 {
+  height: 100px;
+  width: 100px;
+  border: solid 1px blue;
+  background-color: blue;
+}
+
+#bottom-drawer {
+  height: 300px;
+  width: 200px;
+  border: solid 1px red;
+  background-color: red;
+}
+
+</style>
+
+</head>
+
+<body>
+<div id="main-div">
+
+  <div id="right-drawer" class="drawer-content-right">
+  </div>
+
+  <div id="right-drawer2" class="drawer-content-right">
+  </div>
+
+  <div style="position: absolute; bottom: 100px; border: 2px solid black; width: 400px; height: 400px;">
+  <div id="bottom-drawer" class="drawer-content-bottom">
+  </div>
+  </div>
+
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery.drawer.js"></script>
+<script>
+  $(function(){
+    $('#right-drawer').drawer({align: 'right', top: '100px', type: 'absoloute'});
+    $('#right-drawer2').drawer({align: 'right', top: '300px'});
+    $('#bottom-drawer').drawer({align: 'bottom', left: '100px'});
+  });
+</script>
+
+</body>
+</html>

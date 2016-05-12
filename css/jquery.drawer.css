@@ -1,0 +1,36 @@
+.toggle-drawer-btn {
+}
+
+.left-btn {
+  height: 100%;
+  width: 20px !important;
+  float: left;
+  margin: 0;
+}
+
+.top-btn {
+  width: 100% !important;
+  height: 20px !important;
+  top: 0;
+  margin: 0;
+}
+
+.drawer-right {
+  position: absolute;
+  right: 0; 
+}
+
+.drawer-bottom {
+  position: absolute;
+  bottom: 0; 
+}
+
+.drawer-content-right {
+  position: absolute;
+  right: 0;
+}
+
+.drawer-content-bottom {
+  bottom: 0;
+  position: absolute;
+}
