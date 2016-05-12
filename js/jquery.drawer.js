@@ -17,12 +17,18 @@
       wrapper.width($(div).outerWidth(true) + toggleBtnWidth);
       wrapper.height($(div).height());
 
-      if(options.type){
-        wrapper.css({position: options.type});
+      if(options.type == 'sticky'){
+        wrapper.css({position: 'fixed', 'z-index': '999'});
+      } else {
+        wrapper.css({position: 'absolute'});
       }
       
       if (options.top){
         wrapper.css({top: options.top});
+      }
+
+      if (options.bottom){
+        wrapper.css({bottom: options.bottom});
       }
 
       btn.on('click', function(){
@@ -39,6 +45,103 @@
           });
         }
       });
+    }
+  };
+
+  var leftDrawer = {
+
+    init: function(options, div){
+      var wrapper = $(div).wrap('<div class="drawer-wrapper drawer-left"></div>').parent();
+      var btnId = div.attr('id') + '-right-btn'
+      wrapper.append('<button id=' + btnId + ' class="toggle-drawer-btn right-btn"></button>');
+      var btn = $('#' + btnId).button({
+        icons: {
+          primary: "ui-icon-triangle-1-w"
+        },
+        text: false
+      });
+
+      toggleBtnWidth = btn.outerWidth(true);
+      wrapper.width($(div).outerWidth(true) + toggleBtnWidth);
+      wrapper.height($(div).height());
+
+      if(options.type == 'sticky'){
+        wrapper.css({position: 'fixed', 'z-index': '999'});
+      } else {
+        wrapper.css({position: 'absolute'});
+      }
+      
+      if (options.top){
+        wrapper.css({top: options.top});
+      }
+
+      if (options.bottom){
+        wrapper.css({bottom: options.bottom});
+      }
+
+      btn.on('click', function(){
+        if (wrapper.width() <= toggleBtnWidth){
+
+          $(div).show();
+          wrapper.animate( {width: $(div).outerWidth(true) + toggleBtnWidth}, function(){
+            wrapper.width($(div).outerWidth(true) + toggleBtnWidth);
+            wrapper.height($(div).height());
+          });
+        } else {
+          wrapper.animate( {width: toggleBtnWidth}, function(){
+            $(div).hide();
+          });
+        }
+      });
+    }
+  };
+
+  var topDrawer = {
+
+    init: function(options, div){
+      var wrapper = $(div).wrap('<div class="drawer-wrapper drawer-top"></div>').parent();
+      var btnId = div.attr('id') + '-bottom-btn'
+      wrapper.append('<button id=' + btnId + ' class="toggle-drawer-btn bottom-btn"></button>');
+      var btn = $('#' + btnId).button({
+        icons: {
+          primary: "ui-icon-triangle-1-n"
+        },
+        text: false
+      });
+
+      toggleBtnHeight = btn.outerHeight(true);
+      wrapper.width($(div).width());
+      wrapper.height($(div).outerHeight(true) + toggleBtnWidth);
+
+      if(options.type == 'sticky'){
+        wrapper.css({position: 'fixed'});
+      } else {
+        wrapper.css({position: 'absolute'});
+      }
+
+      if (options.left){
+        wrapper.css({left: options.left});
+      }
+
+      if (options.right){
+        wrapper.css({right: options.right});
+      }
+
+      btn.on('click', function(){
+        if (wrapper.height() <= toggleBtnHeight){
+
+          $(div).show();
+          wrapper.animate( {height: $(div).outerHeight(true) + toggleBtnHeight}, function(){
+            wrapper.height($(div).outerHeight(true) + toggleBtnHeight);
+            wrapper.width($(div).width());
+          });
+        } else {
+          wrapper.animate( {height: toggleBtnHeight}, function(){
+            $(div).hide();
+          });
+        }
+      });
+
     }
   };
 
@@ -59,8 +162,18 @@
       wrapper.width($(div).width());
       wrapper.height($(div).outerHeight(true) + toggleBtnWidth);
 
+      if(options.type == 'sticky'){
+        wrapper.css({position: 'fixed'});
+      } else {
+        wrapper.css({position: 'absolute'});
+      }
+
       if (options.left){
         wrapper.css({left: options.left});
+      }
+
+      if (options.right){
+        wrapper.css({right: options.right});
       }
 
       btn.on('click', function(){
@@ -85,12 +198,19 @@
 
     var options = $.extend({
       align: 'right',
-      top: '100px',
-      type: 'fixed'
+      type: 'normal' //sticky
     }, options);
+
+    if (options.align == 'left'){
+      return leftDrawer.init(options, this);
+    }
 
     if (options.align == 'right'){
       return rightDrawer.init(options, this);
+    }
+
+    if (options.align == 'top'){
+      return topDrawer.init(options, this);
     }
 
     if (options.align == 'bottom'){
