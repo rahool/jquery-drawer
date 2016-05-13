@@ -1,32 +1,30 @@
 .toggle-drawer-btn {
+  border-radius: 0;
+  margin: 0;
 }
 
 .left-btn {
   height: 100%;
   width: 20px !important;
   float: left;
-  margin: 0;
 }
 
 .right-btn {
   height: 100%;
   width: 20px !important;
   float: right;
-  margin: 0;
 }
 
 .top-btn {
   width: 100% !important;
   height: 20px !important;
   top: 0;
-  margin: 0;
 }
 
 .bottom-btn {
   width: 100% !important;
   height: 20px !important;
   bottom: 0;
-  margin: 0;
   position: absolute;
 }
 
