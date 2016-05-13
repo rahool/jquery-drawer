@@ -31,6 +31,10 @@
         wrapper.css({bottom: options.bottom});
       }
 
+      if (options.handleSize){
+        btn.css({height: options.handleSize});
+      }
+
       btn.on('click', function(){
         if (wrapper.width() <= toggleBtnWidth){
 
@@ -89,6 +93,10 @@
 
       if (options.bottom){
         wrapper.css({bottom: options.bottom});
+      }
+
+      if (options.handleSize){
+        btn.css({height: options.handleSize});
       }
 
       btn.on('click', function(){
@@ -152,6 +160,10 @@
         wrapper.css({right: options.right});
       }
 
+      if (options.handleSize){
+        btn.css({width: options.handleSize});
+      }
+
       btn.on('click', function(){
         if (wrapper.height() <= toggleBtnHeight){
 
@@ -211,6 +223,10 @@
 
       if (options.right){
         wrapper.css({right: options.right});
+      }
+
+      if (options.handleSize){
+        btn.css({width: options.handleSize});
       }
 
       btn.on('click', function(){
