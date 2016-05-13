@@ -144,7 +144,7 @@
 
       toggleBtnHeight = btn.outerHeight(true);
       wrapper.width($(div).outerWidth(true));
-      wrapper.height($(div).outerHeight(true) + toggleBtnWidth);
+      wrapper.height($(div).outerHeight(true) + toggleBtnHeight);
 
       if(options.type == 'sticky'){
         wrapper.css({position: 'fixed'});

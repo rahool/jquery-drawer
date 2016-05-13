@@ -11,58 +11,93 @@
 <style>
 #left-drawer {
   height: 100px;
-  width: 300px;
-  border: solid 1px yellow;
-  background-color: yellow;
+  width: 250px;
+  border: solid 1px #c9c9c9;
+  background-color: #c9c9c9;
 }
 
 #left-drawer-sticky {
-  height: 100px;
+  height: 150px;
   width: 200px;
-  border: solid 1px yellow;
-  background-color: yellow;
+  border: solid 1px #e3e3e3;
+  background-color: #e3e3e3;
 }
 
 #right-drawer {
   height: 100px;
   width: 200px;
-  border: solid 1px green;
-  background-color: green;
+  border: solid 1px #9ad3de;
+  background-color: #9ad3de;
 }
 
 #right-drawer-sticky {
   height: 100px;
   width: 400px;
-  border: solid 1px blue;
-  background-color: blue;
+  border: solid 1px #89bdd3;
+  background-color: #89bdd3;
 }
 
 #bottom-drawer {
-  height: 300px;
+  height: 200px;
   width: 200px;
-  border: solid 1px red;
-  background-color: red;
+  border: solid 1px #dddfd4;
+  background-color: #dddfd4;
 }
 
 #bottom-drawer-sticky {
-  height: 50px;
-  width: 400px;
-  border: solid 1px red;
-  background-color: red;
+  height: 100px;
+  width: 500px;
+  border: solid 1px #fae596;
+  background-color: #fae596;
 }
 
 #top-drawer {
-  height: 300px;
+  height: 200px;
   width: 200px;
-  border: solid 1px red;
-  background-color: red;
+  border: solid 1px #3fb0ac;
+  background-color: #3fb0ac;
 }
 
 #top-drawer-sticky {
-  height: 150px;
-  width: 200px;
-  border: solid 1px red;
-  background-color: red;
+  height: 280px;
+  width: 620px;
+  border: solid 1px #e5e5e5;
+  background-color: #ffffff;
+  opacity: 0.5;
+  box-shadow: inset 0px -3px 38px -10px rgba(0,0,0,0.33);
+}
+
+code {
+  font: 500 90%/1 Roboto Mono,monospace;
+  word-break: break-word;
+  padding: 1px 4px;
+}
+
+.code {
+  padding: 10px;
+}
+
+h1 {
+  text-align: center;
+  font: 36px Roboto,sans-serif;
+  font-weight: bold;
+}
+
+#header {
+  height: 300px;
+  width: 600px;
+  background-color: #ffffff;
+  position: fixed;
+  left: 350px;
+  padding: 10px;
+}
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 10px;
+  font-size:0.7em;
 }
 
 </style>
@@ -71,49 +106,85 @@
 
 <body>
 <div id="main-div">
+  <div id="header">
+  <h1>jQuery Drawer Plugin</h1>
+    <p id="test">Drawer is a simple jQuery plugin for adding a sliding drawer functionality to any HTML element. It can be used to show/hide any element with sliding effect of a drawer. The Drawer can be anchored to any side of the page or a div. It can also be configured to stick to any of the page edges (top, right, bottom or left) to get a floating effect.</p>
+  </div>  
 
   <div id="left-drawer" class="drawer-content-left">
+    <div class="code">
+    <code>
+      $('#left-drawer').drawer({align: 'left', top: '150px'});
+    </code>
+    </div>
   </div>
 
   <div id="left-drawer-sticky" class="drawer-content-left">
+    <code>
+      $('#left-drawer-sticky').drawer({align: 'left', top: '10px', type: 'sticky', handleSize: '50%'});
+    </code>
   </div>
 
   <div id="right-drawer" class="drawer-content-right">
+    <code>
+      $('#right-drawer').drawer({align: 'right', top: '100px'});
+    </code>
   </div>
 
   <div id="right-drawer-sticky" class="drawer-content-right">
+    <code>
+      $('#right-drawer-sticky').drawer({align: 'right', bottom: '150px', type: 'sticky', handleSize: '30%'});
+    </code>
   </div>
 
-  <div style="position: absolute; bottom: 0px; border: 1px solid black; width: 300px; height: 400px;">
+  <div style="position: absolute; bottom: 180px; left: 10px; border: 1px solid black; width: 240px; height: 300px;">
     <div id="bottom-drawer" class="drawer-content-bottom">
+      <code>
+        $('#bottom-drawer').drawer({align: 'bottom', left: '50px'});
+      </code>
     </div>
   </div>
 
   <div id="bottom-drawer-sticky" class="drawer-content-bottom">
+    <code>
+      $('#bottom-drawer-sticky').drawer({align: 'bottom', left: '400px', type: 'sticky'});
+    </code>
   </div>
 
   <div id="top-drawer" class="drawer-content-top">
+    <code>
+      $('#top-drawer').drawer({align: 'top', left: '400px'});
+    </code>
   </div>
 
   <div id="top-drawer-sticky" class="drawer-content-top">
+    <div style="position: absolute; bottom: 0;">
+      <code>
+        $('#top-drawer-sticky').drawer({align: 'top', right: '250px', type: 'sticky'});
+      </code>
+    </div>
   </div>
 
   <div style="height: 2000px;"></div>
 
 </div>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<div id="footer">
+&copy 2016 Rahul Yadava. Drawer is licensed under the <a href="https://github.com/rahool/jquery-drawer/blob/master/LICENSE">MIT license</a>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 <script type="text/javascript" src="js/jquery.drawer.js"></script>
 <script>
   $(function(){
-    $('#left-drawer').drawer({align: 'left', top: '150px'});
-    $('#left-drawer-sticky').drawer({align: 'left', top: '10px', type: 'sticky', handleSize: '50%'});
-    $('#right-drawer').drawer({align: 'right', top: '100px'});
-    $('#right-drawer-sticky').drawer({align: 'right', bottom: '150px', type: 'sticky', handleSize: '30%'});
-    $('#bottom-drawer').drawer({align: 'bottom', left: '50px'});
+    $('code').wrap('<div class="code"></div>');
+    $('#left-drawer').drawer({align: 'left', top: '70px'});
+    $('#left-drawer-sticky').drawer({align: 'left', bottom: '10px', type: 'sticky', handleSize: '50%'});
+    $('#right-drawer').drawer({align: 'right', bottom: '240px'});
+    $('#right-drawer-sticky').drawer({align: 'right', bottom: '100px', type: 'sticky', handleSize: '30%'});
+    $('#bottom-drawer').drawer({align: 'bottom', left: '20px'});
     $('#bottom-drawer-sticky').drawer({align: 'bottom', left: '400px', type: 'sticky'});
-    $('#top-drawer').drawer({align: 'top', left: '400px'});
-    $('#top-drawer-sticky').drawer({align: 'top', right: '250px', type: 'sticky'});
+    $('#top-drawer').drawer({align: 'top', right: '100px'});
+    $('#top-drawer-sticky').drawer({align: 'top', left: '350px', type: 'sticky'});
   });
 </script>
 
