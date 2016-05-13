@@ -8,7 +8,7 @@
       wrapper.append('<button id=' + btnId + ' class="toggle-drawer-btn left-btn"></button>');
       var btn = $('#' + btnId).button({
         icons: {
-          primary: "ui-icon-triangle-1-w"
+          primary: "ui-icon-triangle-1-e"
         },
         text: false
       });
@@ -38,10 +38,22 @@
           wrapper.animate( {width: $(div).outerWidth(true) + toggleBtnWidth}, function(){
             wrapper.width($(div).outerWidth(true) + toggleBtnWidth);
             wrapper.height($(div).outerHeight(true));
+            btn.button({
+              icons: {
+                primary: "ui-icon-triangle-1-e"
+              },
+              text: false
+            });
           });
         } else {
           wrapper.animate( {width: toggleBtnWidth}, function(){
             $(div).hide();
+            btn.button({
+              icons: {
+                primary: "ui-icon-triangle-1-w"
+              },
+              text: false
+            });
           });
         }
       });
@@ -86,10 +98,23 @@
           wrapper.animate( {width: $(div).outerWidth(true) + toggleBtnWidth}, function(){
             wrapper.width($(div).outerWidth(true) + toggleBtnWidth);
             wrapper.height($(div).outerHeight());
+            btn.button({
+              icons: {
+                primary: "ui-icon-triangle-1-w"
+              },
+              text: false
+            });
+
           });
         } else {
           wrapper.animate( {width: toggleBtnWidth}, function(){
             $(div).hide();
+            btn.button({
+              icons: {
+                primary: "ui-icon-triangle-1-e"
+              },
+              text: false
+            });
           });
         }
       });
@@ -134,10 +159,22 @@
           wrapper.animate( {height: $(div).outerHeight(true) + toggleBtnHeight}, function(){
             wrapper.height($(div).outerHeight(true) + toggleBtnHeight);
             wrapper.width($(div).outerWidth());
+            btn.button({
+              icons: {
+                primary: "ui-icon-triangle-1-n"
+              },
+              text: false
+            });
           });
         } else {
           wrapper.animate( {height: toggleBtnHeight}, function(){
             $(div).hide();
+            btn.button({
+              icons: {
+                primary: "ui-icon-triangle-1-s"
+              },
+              text: false
+            });
           });
         }
       });
@@ -153,7 +190,7 @@
       wrapper.append('<button id=' + btnId + ' class="toggle-drawer-btn top-btn"></button>');
       var btn = $('#' + btnId).button({
         icons: {
-          primary: "ui-icon-triangle-1-n"
+          primary: "ui-icon-triangle-1-s"
         },
         text: false
       });
@@ -183,10 +220,22 @@
           wrapper.animate( {height: $(div).outerHeight(true) + toggleBtnHeight}, function(){
             wrapper.height($(div).outerHeight(true) + toggleBtnHeight);
             wrapper.width($(div).outerWidth());
+            btn.button({
+              icons: {
+                primary: "ui-icon-triangle-1-s"
+              },
+              text: false
+            });
           });
         } else {
           wrapper.animate( {height: toggleBtnHeight}, function(){
             $(div).hide();
+            btn.button({
+              icons: {
+                primary: "ui-icon-triangle-1-n"
+              },
+              text: false
+            });
           });
         }
       });
