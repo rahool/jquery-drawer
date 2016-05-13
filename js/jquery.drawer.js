@@ -15,7 +15,7 @@
 
       toggleBtnWidth = btn.outerWidth(true);
       wrapper.width($(div).outerWidth(true) + toggleBtnWidth);
-      wrapper.height($(div).height());
+      wrapper.height($(div).outerHeight(true));
 
       if(options.type == 'sticky'){
         wrapper.css({position: 'fixed', 'z-index': '999'});
@@ -37,7 +37,7 @@
           $(div).show();
           wrapper.animate( {width: $(div).outerWidth(true) + toggleBtnWidth}, function(){
             wrapper.width($(div).outerWidth(true) + toggleBtnWidth);
-            wrapper.height($(div).height());
+            wrapper.height($(div).outerHeight(true));
           });
         } else {
           wrapper.animate( {width: toggleBtnWidth}, function(){
@@ -63,7 +63,7 @@
 
       toggleBtnWidth = btn.outerWidth(true);
       wrapper.width($(div).outerWidth(true) + toggleBtnWidth);
-      wrapper.height($(div).height());
+      wrapper.height($(div).outerHeight(true));
 
       if(options.type == 'sticky'){
         wrapper.css({position: 'fixed', 'z-index': '999'});
@@ -85,7 +85,7 @@
           $(div).show();
           wrapper.animate( {width: $(div).outerWidth(true) + toggleBtnWidth}, function(){
             wrapper.width($(div).outerWidth(true) + toggleBtnWidth);
-            wrapper.height($(div).height());
+            wrapper.height($(div).outerHeight());
           });
         } else {
           wrapper.animate( {width: toggleBtnWidth}, function(){
@@ -110,7 +110,7 @@
       });
 
       toggleBtnHeight = btn.outerHeight(true);
-      wrapper.width($(div).width());
+      wrapper.width($(div).outerWidth(true));
       wrapper.height($(div).outerHeight(true) + toggleBtnWidth);
 
       if(options.type == 'sticky'){
@@ -133,7 +133,7 @@
           $(div).show();
           wrapper.animate( {height: $(div).outerHeight(true) + toggleBtnHeight}, function(){
             wrapper.height($(div).outerHeight(true) + toggleBtnHeight);
-            wrapper.width($(div).width());
+            wrapper.width($(div).outerWidth());
           });
         } else {
           wrapper.animate( {height: toggleBtnHeight}, function(){
@@ -159,7 +159,7 @@
       });
 
       toggleBtnHeight = btn.outerHeight(true);
-      wrapper.width($(div).width());
+      wrapper.width($(div).outerWidth(true));
       wrapper.height($(div).outerHeight(true) + toggleBtnWidth);
 
       if(options.type == 'sticky'){
@@ -182,7 +182,7 @@
           $(div).show();
           wrapper.animate( {height: $(div).outerHeight(true) + toggleBtnHeight}, function(){
             wrapper.height($(div).outerHeight(true) + toggleBtnHeight);
-            wrapper.width($(div).width());
+            wrapper.width($(div).outerWidth());
           });
         } else {
           wrapper.animate( {height: toggleBtnHeight}, function(){
