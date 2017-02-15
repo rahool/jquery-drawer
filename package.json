@@ -1,0 +1,32 @@
+{
+  "name": "jquery-drawer-plugin",
+  "version": "1.0.5",
+  "description": "Drawer is a simple jQuery plugin for adding a sliding drawer functionality to any HTML element. It can be used to show/hide any element with sliding effect of a drawer. The Drawer can be anchored to any side of the page or a div. It can also be configured to stick to any of the page edges (top, right, bottom or left) to get a floating effect.",
+  "main": "./js/jquery.drawer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rahool/jquery-drawer.git"
+  },
+  "keywords": [
+    "jquery-plugin",
+    "ecosystem:jquery",
+    "drawer",
+    "jquery-drawer",
+    "slider",
+    "jquery-slider",
+    "sliders",
+    "slideIn",
+    "slideOut",
+    "slideUp",
+    "slideDown"
+  ],
+  "author": "Rahul Yadava",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rahool/jquery-drawer/issues"
+  },
+  "homepage": "https://github.com/rahool/jquery-drawer#readme"
+}
